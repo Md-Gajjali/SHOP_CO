@@ -6,8 +6,8 @@ import { Rate } from 'antd';
 const Card = ({ img, title, discountPrice, review, price, rating, disPar }) => {
   return (
     <div className='w-[295px] group '>
-      <div className='relative group overflow-hidden w-[295px] rounded-[20px]'>
-        {/* Image Container */}
+
+      <div className='relative group overflow-hidden rounded-[20px]'>
         <div className='overflow-hidden'>
           <Image
             src={img}
@@ -17,15 +17,11 @@ const Card = ({ img, title, discountPrice, review, price, rating, disPar }) => {
             className='rounded-[20px] cursor-pointer transition-transform duration-300 group-hover:scale-105'
           />
         </div>
-
-        {/* Sliding Button */}
-        <button className='absolute bottom-0 left-0 w-full bg-black text-white px-5 py-4 translate-y-full transition-all duration-300 ease-in-out group-hover:translate-y-0'>
-          Add To Cart
-        </button>
+        <button className='absolute bottom-0 left-0  w-full bg-black text-white px-5 py-4 translate-y-full cursor-pointer transition-all duration-300 ease-in-out group-hover:translate-y-0 '>Add to cart</button>
       </div>
 
       <div>
-        <h2 className='font-bold text-[20px] mt-[16px]'>{title}</h2>
+        <h2 className='font-bold text-[20px] mt-4'>{title}</h2>
         <div>
           <div className='flex items-center gap-1 py-2 w-[226px]'>
             <Rate allowHalf defaultValue={rating} /> /5
