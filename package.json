@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "ser": "npx json-server --watch db.json --port 4010",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "server": "json-server --watch db.json --port 4010"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",

@@ -1,10 +1,10 @@
+import { twMerge } from "tailwind-merge"
 
-const SubHeader = ({title}) => {
+const SubHeader = ({ title, className }) => {
   return (
-      <div className={"flex w-full justify-cener items-center"}>
-        <h1 className="mx-auto  font-bold text-5xl">{title}</h1>
-      </div>
-  )
-}
-
+    <div className={twMerge("flex w-full justify-center items-center", className)}>
+      <h1 className="mx-auto font-bold text-5xl uppercase">{title}</h1>
+    </div>
+  );
+};
 export default SubHeader

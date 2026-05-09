@@ -2,47 +2,58 @@
 import React, { useEffect, useState } from 'react'
 import SubHeader from './SubHeader'
 import Card from './Card'
-import img from '../Assets/im.png'
 import axios from "axios";
-
+import { useDispatch, useSelector } from 'react-redux';
+import { GetProducts } from '../ProductSlice';
+import { Button } from './Button';
 
 const NewArrival = () => {
+  const dispacth = useDispatch()
 
-  const [product,setProduct]=useState([])
+  // const [product, setProduct] = useState([])
+
+    const allProducts = useSelector((state) => state.AllProduct.value);
+
+  const data = allProducts ;
 
   useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const res = await axios.get('http://localhost:4010/products');
-      setProduct(res.data);
-    } catch (error) {
-      console.error("ডেটা আনতে সমস্যা হয়েছে:", error.message);
-    }
-  };
-
-    fetchData(); 
-  }, []); 
+    const fetchData = async () => {
+      try {
+        const res = await axios.get('http://localhost:4010/products');
+        //  setProduct(dispacth(res.data));
+        dispacth(GetProducts(res.data))
+      } catch (error) {
+        console.error("ডেটা আনতে  সমস্যা হয়েছে:", error.message);
+      }
+    };
+    fetchData();
+  }, []);
 
 
   return (
     <div className='mt-[73px] container'>
       <SubHeader title="NEW ARRIVALS" />
-      <div className='flex justify-between flex-wrap mt-5 gap-5'>
+      <div className='flex justify-between flex-wrap mt-12 gap-5'>
         {
-          product?.map((item)=>{
-            return(
-              <Card 
-               key={item.id}
-               img={img} 
-               title={item.title} 
-               price={item.discountPrice}  
-               discountPrice={item.price} 
-               rating={item.rating} 
-               disPar={item.discountPercentage} />
+          data?.slice(0, 4).map((item) => {
+            return (
+              <Card
+                key={item.id}
+                img={item.image_url}
+                title={item.name}
+                price={Math.round(item.price - (item.price * item.discount) /100)}
+                // {Math.round(items.price - (items.price * items.discountPercentage) / 100)}
+                discountPrice={Number(item.price)}
+                rating={item.rating}
+                disPar={item.discount} />
             )
           })
         }
       </div>
+        <div className='flex justify-center items-center mt-[46px]'>
+            <Button variant='link' size='md'>View All</Button>
+        </div>
+        <hr className=' border-[#aba8a7] w-full mt-10' />
     </div>
   )
 }

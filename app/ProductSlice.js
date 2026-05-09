@@ -12,6 +12,13 @@ export const ProductSlice = createSlice({
     // GetProducts:(state,action)=>{
     //     state.value = action.payload
     // },
+    GetProducts:(state ,action)=> {
+      state.value = action.payload.map(item => ({
+    ...item,
+    discount: item.discount === null ? 0 : item.discount,
+    original_price: item.original_price === null ? item.price : item.original_price
+  }));
+    },
     // FilterReducer:(state,action)=>{
     //     state.value = action.payload
     // },
@@ -46,11 +53,13 @@ export const ProductSlice = createSlice({
     // SubTotalReducer: (state,)=> {
     //   state.subTotal = state.cart.reduce((current,item)=> current + (item.quan * item.price),0)
     // }
-  },
+
+
+  }
 })
 
 
-export const { GetProducts,SubTotalReducer,DecrementReducer,IncrementReducer,FilterReducer,RemoveReducer,WishlistRemoveReducer ,CartReducer , WishlistReducer } = ProductSlice.actions
+export const { GetProducts } = ProductSlice.actions
 
 
 export default ProductSlice.reducer
