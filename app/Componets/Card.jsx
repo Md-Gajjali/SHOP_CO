@@ -3,7 +3,10 @@ import React from 'react'
 import { Rate } from 'antd';
 
 
-const Card = ({ img, title, discountPrice,  price, rating, disPar }) => {
+const Card = ({ img, title, discountPrice, price, rating, disPar }) => {
+
+  // const hasDis = disPar && discountPrice > 0 ;
+
   return (
     <div className='w-[295px] group '>
 
@@ -28,8 +31,16 @@ const Card = ({ img, title, discountPrice,  price, rating, disPar }) => {
           </div>
           <div className='gap-2.5 flex items-center w-[200px]'>
             <span className='font-bold text-2xl '>${price}</span>
-            <span className='line-through font-bold text-[#8a8686] text-2xl'>${discountPrice}</span>
-            <span className='bg-[#FFEBEB] text-[#FF3333] font-bold py-[6px] px-[14px] rounded-[62px] '>-{disPar}%</span>
+            {/* <span className='line-through font-bold text-[#8a8686] text-2xl'>${discountPrice}</span> */}
+            {
+              disPar && discountPrice > 0 ? (
+                <>
+                  <span className='line-through font-bold text-[#8a8686] text-2xl'>${discountPrice}</span>
+
+                  <span className='bg-[#FFEBEB] text-[#FF3333] font-bold py-[6px] px-[14px] rounded-[62px] '>-{disPar}%</span>
+                </>
+              ) : null
+            }
           </div>
         </div>
       </div>

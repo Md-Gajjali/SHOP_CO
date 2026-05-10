@@ -19,7 +19,7 @@ const TopSelling = () => {
                   key={item.id}
                   img={item.image_url}
                   title={item.name}
-                  price={Math.round(item.price - (item.price * item.disPar) /100)}
+                  price={Math.round(item.price - (item.price * item.discount) /100)}
                   discountPrice={item.price}
                   rating={item.rating}
                   disPar={item.discount}

@@ -10,8 +10,6 @@ import DressStyle from '../Componets/DressStyle'
 const HomePage = () => {
   return (
     <>
-      <Header />
-      <Navbar />
       <HeroSection />
       <LogoMarquee />
       <NewArrival />

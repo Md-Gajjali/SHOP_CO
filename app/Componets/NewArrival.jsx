@@ -12,9 +12,8 @@ const NewArrival = () => {
 
   // const [product, setProduct] = useState([])
 
-    const allProducts = useSelector((state) => state.AllProduct.value);
+    const {value : data } = useSelector((state) => state.AllProduct);
 
-  const data = allProducts ;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -42,10 +41,9 @@ const NewArrival = () => {
                 img={item.image_url}
                 title={item.name}
                 price={Math.round(item.price - (item.price * item.discount) /100)}
-                // {Math.round(items.price - (items.price * items.discountPercentage) / 100)}
-                discountPrice={Number(item.price)}
+                discountPrice={item.price}
                 rating={item.rating}
-                disPar={item.discount} />
+                disPar={item.discount || 0} />
             )
           })
         }

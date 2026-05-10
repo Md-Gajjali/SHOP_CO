@@ -4,6 +4,7 @@ import { CartIcon, Search } from '../Icons'
 import ManIcon from '../Icons/ManIcon'
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { FaBars } from "react-icons/fa";
+import Link from 'next/link'
 
 
 const Navbar = () => {
@@ -25,7 +26,7 @@ const Navbar = () => {
                     </div>
                 <div className=''>
                     <ul className='xl:flex items-center hidden gap-6'>
-                        <li>Shop</li>
+                        <li><Link href="/shop">Shop</Link> </li>
                         <li>On Sale</li>
                         <li>New Arrivals</li>
                         <li>Brands</li>

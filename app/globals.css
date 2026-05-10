@@ -1,19 +1,15 @@
-@import "tailwindcss";
-
+@import 'tailwindcss';
 
 @theme {
-  /* This clears any 'initial' values being incorrectly 
-     inferred as breakpoints */
-  --breakpoint-*: initial; 
-  
-  /* Then define your actual breakpoints if needed */
-  --breakpoint-sm:576px ;
-  --breakpoint-md:768px ;
-  --breakpoint-lg:992px ;
-  --breakpoint-xl:1170px ;
-  --breakpoint-xxl:1240px ;
+  --breakpoint-*: initial;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1170px;
+  --breakpoint-xxl: 1240px;
 }
 
-@utility container{
-    margin-inline: auto;
-  }
+@utility container {
+  margin-inline: auto;
+}
+
