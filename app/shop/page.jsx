@@ -2,8 +2,11 @@ import React from 'react'
 import Breadcrums from '../Componets/Breadcrums'
 import { Arrow, Category, UpArrow } from '../Icons'
 import PriceRange from '../Componets/Range'
+import ColorPicker from '../Componets/Colors'
 
 const page = () => {
+
+  
 
   return (
     <>
@@ -12,25 +15,42 @@ const page = () => {
         <div className="col-span-4 py-5 px-6 border rounded-[20px] border-[#E7E7E7]">
           <div className='flex justify-between'>
             <h2 className='font-bold text-[20px] '>Filter</h2>
-            <Category/>
+            <Category />
           </div>
-          <hr  className='border-[#E7E7E7] border  mt-6 '/>
+          <hr className='border-[#E7E7E7] border  mt-6 ' />
           <ul className='py-6'>
-            <li className='flex justify-between text-[16px] text-[#8C8C8C] items-center pb-[20px]'>Tshirts <Arrow/> </li>
-            <li className='flex justify-between text-[16px] text-[#8C8C8C] items-center pb-[20px]'>Tshirts <Arrow/> </li>
-            <li className='flex justify-between text-[16px] text-[#8C8C8C] items-center pb-[20px]'>Tshirts <Arrow/> </li>
-            <li className='flex justify-between text-[16px] text-[#8C8C8C] items-center pb-[20px]'>Tshirts <Arrow/> </li>
-            <li className='flex justify-between text-[16px] text-[#8C8C8C] items-center pb-[20px]'>Tshirts <Arrow/> </li>
+            <li className='flex justify-between text-[16px] text-[#8C8C8C] items-center pb-[20px]'>Tshirts <Arrow /> </li>
+            <li className='flex justify-between text-[16px] text-[#8C8C8C] items-center pb-[20px]'>Tshirts <Arrow /> </li>
+            <li className='flex justify-between text-[16px] text-[#8C8C8C] items-center pb-[20px]'>Tshirts <Arrow /> </li>
+            <li className='flex justify-between text-[16px] text-[#8C8C8C] items-center pb-[20px]'>Tshirts <Arrow /> </li>
+            <li className='flex justify-between text-[16px] text-[#8C8C8C] items-center pb-[20px]'>Tshirts <Arrow /> </li>
           </ul>
-          <hr  className='border-[#E7E7E7] border '/>
+          <hr className='border-[#E7E7E7] border ' />
 
           <div className='flex justify-between items-center mt-[29.25px]'>
             <h2 className='font-bold text-[20px]'>Price </h2>
             <UpArrow />
           </div>
+
           <div>
-            <PriceRange/>
+            <PriceRange />
           </div>
+
+          <hr className='border-[#E7E7E7] border  mt-20 ' />
+
+          <div>
+            <div className='flex justify-between items-center mt-10'>
+              <span className='font-bold text-[20px]'>Color </span>
+              <UpArrow />
+            </div>
+
+            <div>
+              <ColorPicker />
+            </div>
+          </div>
+
+
+
         </div>
         <div className="col-span-8">
         </div>

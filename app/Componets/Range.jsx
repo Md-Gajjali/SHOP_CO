@@ -62,7 +62,7 @@ export default function PriceRangeSlider() {
   );
 
   return (
-    <div className="w-full max-w-sm px-4 py-8">
+    <div className="w-full max-w-sm px-4  ">
       <div ref={trackRef} className="relative h-1.5 my-10">
         <div className="absolute inset-0 bg-gray-200 rounded-full" />
 
