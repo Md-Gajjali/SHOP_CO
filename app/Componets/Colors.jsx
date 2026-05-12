@@ -25,7 +25,7 @@ const ColorPicker = () => {
           key={color.name}
           onClick={() => setSelectedColor(color.name)}
           className={`
-            relative w-12 h-12 rounded-full transition-all duration-200 
+            relative w-9.25 h-9.25 rounded-full transition-all duration-200 
             flex items-center justify-center border-2
             ${color.bg} 
             ${color.border || 'border-transparent'}

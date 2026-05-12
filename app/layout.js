@@ -1,6 +1,5 @@
 import { Lato, Raleway } from 'next/font/google'
 import './globals.css'
-import Providers from './Providers'
 import Navbar from './Componets/Navbar'
 import Header from './Componets/Header'
 
@@ -29,11 +28,9 @@ export default function RootLayout ({ children }) {
       className={`${lato.variable} ${raleway.variable} h-full antialiased`}
     >
       <body className='min-h-full flex flex-col loto'>
-        <Providers>
           <Header/>
           <Navbar/>
           {children}
-          </Providers>
       </body>
     </html>
   )

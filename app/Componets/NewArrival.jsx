@@ -4,13 +4,11 @@ import SubHeader from './SubHeader'
 import Card from './Card'
 import axios from "axios";
 import { useDispatch, useSelector } from 'react-redux';
-import { GetProducts } from '../ProductSlice';
 import { Button } from './Button';
 
 const NewArrival = () => {
   const dispacth = useDispatch()
 
-  // const [product, setProduct] = useState([])
 
     const {value : data } = useSelector((state) => state.AllProduct);
 
@@ -19,8 +17,6 @@ const NewArrival = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get('http://localhost:4010/products');
-        //  setProduct(dispacth(res.data));
-        dispacth(GetProducts(res.data))
       } catch (error) {
         console.error("ডেটা আনতে  সমস্যা হয়েছে:", error.message);
       }

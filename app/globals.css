@@ -13,3 +13,6 @@
   margin-inline: auto;
 }
 
+body{
+  overflow-x: hidden;
+}

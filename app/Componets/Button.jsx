@@ -1,10 +1,11 @@
-"useClient"
+"use client"
+
 import { cva } from 'class-variance-authority'
 import { cn } from '../lib/utils'
 import React from 'react'
 
 const buttonVariants = cva(
-    "inline-flex items-center justify-center rounded-md text-sm font-medium transition-all ease-in-out duration-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 active:scale-95",
+    "flex items-center justify-center rounded-md text-sm font-medium transition-all ease-in-out duration-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 active:scale-95",
     {
         variants: {
             variant: {
@@ -28,14 +29,23 @@ const buttonVariants = cva(
     }
 )
 
+/**
+ * Button Component
+ * @param {Object} props - Button properties
+ * @param {string} [props.className] - Additional CSS classes
+ * @param {'default' | 'destructive' | 'outline' | 'ghost' | 'link'} [props.variant='default'] - Button variant style
+ * @param {'default' | 'sm' | 'md' | 'lg' | 'icon'} [props.size='default'] - Button size
+ * @param {React.Ref} ref - Forwarded ref to button element
+ * @returns {JSX.Element} Button element
+ */
 const Button = React.forwardRef(({ className, variant, size, ...props }, ref) => {
-  return (
-    <button
-      ref={ref}
-      className={cn(buttonVariants({ variant, size, className }))}
-      {...props}
-    />
-  );
+    return (
+        <button
+            ref={ref}
+            className={cn(buttonVariants({ variant, size, className }))}
+            {...props}
+        />
+    );
 });
 
 Button.displayName = "Button";

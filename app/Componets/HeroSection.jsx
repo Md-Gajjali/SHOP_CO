@@ -3,7 +3,7 @@ import React from 'react'
 import img from '../Assets/a.png'
 import Image from 'next/image'
 import { Button2 } from './Button2'
-import { easeIn, easeInOut, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 
 const HeroSection = () => {
