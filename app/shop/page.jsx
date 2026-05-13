@@ -5,7 +5,7 @@ import PriceRange from '../Componets/Range'
 import ColorPicker from '../Componets/Colors'
 import { Button2 } from '../Componets/Button2'
 import DropDownMini from '../Componets/DropDownMini'
-import CounterSlice from '../Componets/UseCounterStore'
+// import CounterSlice from '../Componets/UseCounterStore'
 
 const page = () => {
 
@@ -103,7 +103,7 @@ const page = () => {
           </div>
          
 
-         <CounterSlice/>
+         {/* <CounterSlice/> */}
           
         </div>
       </div>

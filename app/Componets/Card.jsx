@@ -1,12 +1,15 @@
+"use client"
 import Image from 'next/image'
 import React from 'react'
 import { Rate } from 'antd';
+import useCart from '../src/hooks/useCart';
 
 
 const Card = ({ img, title, discountPrice, price, rating, disPar }) => {
 
   // const hasDis = disPar && discountPrice > 0 ;
-
+  const { addToCart, cart } = useCart(state => state)
+  console.log(cart)
   return (
     <div className='w-[295px] group '>
 
@@ -20,7 +23,7 @@ const Card = ({ img, title, discountPrice, price, rating, disPar }) => {
             className='rounded-[20px] cursor-pointer transition-transform duration-300 group-hover:scale-105'
           />
         </div>
-        <button className='absolute -bottom-1 left-0  w-full bg-black text-white px-5 py-4 translate-y-full cursor-pointer transition-all duration-300 ease-in-out group-hover:translate-y-0 '>Add to cart</button>
+        <button onClick={() => addToCart({ img, title, discountPrice, price, rating, disPar })} className='absolute -bottom-1 left-0  w-full bg-black text-white px-5 py-4 translate-y-full cursor-pointer transition-all duration-300 ease-in-out group-hover:translate-y-0 '>Add to cart</button>
       </div>
 
       <div>
